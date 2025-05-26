@@ -1,9 +1,62 @@
-// @todo: Темплейт карточки
 
-// @todo: DOM узлы
+const cards = document.querySelector('#card-template');
+const placesList = document.querySelector('.places__list');
+const addButton = document.querySelector('.profile__add-button');
+const popupAddCard = document.querySelector('.popup_type_new-card');
+const popupAddCardButton = popupAddCard.querySelector('.popup__button');
+const popupAddCardNameInput = popupAddCard.querySelector('.popup__input_type_card-name');
+const popupAddCardLinkInput = popupAddCard.querySelector('.popup__input_type_url');
 
-// @todo: Функция создания карточки
 
-// @todo: Функция удаления карточки
+function createCardElement(cardData, buttonDelete) {
+    const cardElement = cards.content.cloneNode(true).querySelector('.card');
 
-// @todo: Вывести карточки на страницу
+    const cardName = cardElement.querySelector('.card__title');
+    const cardImage = cardElement.querySelector('.card__image');
+   
+    cardImage.src = cardData.link;
+    cardName.textContent = cardData.name;
+    
+    const deleteButton = cardElement.querySelector('.card__delete-button');
+    deleteButton.addEventListener ('click',() => 
+        {
+            buttonDelete(cardElement);  
+        });
+  return cardElement;
+}
+
+initialCards.forEach(cardData => {
+    const cardElement = createCardElement(cardData, removeCard);
+    placesList.appendChild(cardElement);
+  });
+
+function removeCard(cardElement) {
+    cardElement.remove();
+}
+
+addButton.addEventListener ('click',() => 
+    {
+        popupAddCardNameInput.value = "";
+        popupAddCardLinkInput.value = "";
+        popupAddCard.style.display = "flex";
+    });
+
+
+popupAddCardButton.addEventListener ('click', (event) => 
+    {
+        event.preventDefault();
+        let name = popupAddCardNameInput.value;
+        let link = popupAddCardLinkInput.value;
+        const cardElement = createCardElement({name: name, link: link}, removeCard);
+        placesList.appendChild(cardElement);
+        popupAddCard.style.display = "none";
+    });
+
+// function (cardData, addButton) {
+
+    
+//     return cardElement;
+
+//     var element = document.getElementByClass(".popup__content_content_image");
+//     element.style.display = "flex";
+// };
