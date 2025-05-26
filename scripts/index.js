@@ -13,50 +13,39 @@ function createCardElement(cardData, buttonDelete) {
 
     const cardName = cardElement.querySelector('.card__title');
     const cardImage = cardElement.querySelector('.card__image');
-   
+    
     cardImage.src = cardData.link;
+    cardImage.alt = `Изображение места: ${cardData.name}`; 
     cardName.textContent = cardData.name;
     
     const deleteButton = cardElement.querySelector('.card__delete-button');
-    deleteButton.addEventListener ('click',() => 
-        {
-            buttonDelete(cardElement);  
-        });
-  return cardElement;
-}
+    deleteButton.addEventListener ('click',() => {
+        buttonDelete(cardElement);  
+    });
+    return cardElement;
+};
 
 initialCards.forEach(cardData => {
     const cardElement = createCardElement(cardData, removeCard);
     placesList.appendChild(cardElement);
-  });
+});
 
 function removeCard(cardElement) {
     cardElement.remove();
-}
+};
 
-addButton.addEventListener ('click',() => 
-    {
-        popupAddCardNameInput.value = "";
-        popupAddCardLinkInput.value = "";
-        popupAddCard.style.display = "flex";
-    });
+addButton.addEventListener ('click',() => {
+    popupAddCardNameInput.value = "";
+    popupAddCardLinkInput.value = "";
+    popupAddCard.style.display = "flex";
+});
 
 
-popupAddCardButton.addEventListener ('click', (event) => 
-    {
-        event.preventDefault();
-        let name = popupAddCardNameInput.value;
-        let link = popupAddCardLinkInput.value;
-        const cardElement = createCardElement({name: name, link: link}, removeCard);
-        placesList.appendChild(cardElement);
-        popupAddCard.style.display = "none";
-    });
-
-// function (cardData, addButton) {
-
-    
-//     return cardElement;
-
-//     var element = document.getElementByClass(".popup__content_content_image");
-//     element.style.display = "flex";
-// };
+popupAddCardButton.addEventListener ('click', (event) => {
+    event.preventDefault();
+    let name = popupAddCardNameInput.value;
+    let link = popupAddCardLinkInput.value;
+    const cardElement = createCardElement({name: name, link: link}, removeCard);
+    placesList.appendChild(cardElement);
+    popupAddCard.style.display = "none";
+});
