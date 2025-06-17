@@ -1,0 +1,44 @@
+{
+  "name": "mesto-project-ff",
+  "version": "0.0.1",
+  "description": "#### Ссылка на макет: https://www.figma.com/design/BOu4PyRg0j7B70CHFy6jY3/5-%D1%81%D0%BF%D1%80%D0%B8%D0%BD%D1%82.-JavaScript?node-id=0-1&p=f&t=8a82r2eZa9dZ6Oqq-0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vikkykiki/mesto-project-ff.git"
+  },
+  "author": "Viktorija Kovaleva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vikkykiki/mesto-project-ff/issues"
+  },
+  "homepage": "https://github.com/Vikkykiki/mesto-project-ff#readme",
+  "dependencies": {
+    "core-js": "^3.43.0",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "cssnano": "^7.0.7",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss-loader": "^8.1.1",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+   "dependencies": {
+    "core-js": ""
+  }
+}

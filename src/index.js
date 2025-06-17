@@ -1,3 +1,5 @@
+import './styles/index.css';
+import './index.js';
 
 const cards = document.querySelector('#card-template');
 const placesList = document.querySelector('.places__list');
@@ -49,3 +51,20 @@ popupAddCardButton.addEventListener ('click', (event) => {
     placesList.appendChild(cardElement);
     popupAddCard.style.display = "none";
 });
+
+const numbers = [2, 3, 5];
+
+const doubledNumbers = numbers.map(number => number * 2);
+
+console.log(doubledNumbers); // 4, 6, 10
+
+
+// const jordanImage = new URL('./images/jordan.jpg', import.meta.url);
+// const jamesImage = new URL('./images/james.jpg', import.meta.url);
+// const bryantImage = new URL('./images/bryant.jpg', import.meta.url)
+
+// const whoIsTheGoat = [
+//   { name: 'Michael Jordan', link: jordanImage },
+//   { name: 'Lebron James', link: jamesImage },
+//   { name: 'Kobe Bryant', link: bryantImage },
+// ]; 
