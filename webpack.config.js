@@ -45,6 +45,7 @@ module.exports = {
    }),
      new CleanWebpackPlugin(),
      new MiniCssExtractPlugin(),
-  ],
-  stats: 'verbose'
+  ]
+  // ,
+  // stats: 'verbose'
 }; 
